@@ -4,3 +4,7 @@ pandas
 requests
 matplotlib
 wordcloud
+torch
+transformers
+nltk
+scikit-learn
