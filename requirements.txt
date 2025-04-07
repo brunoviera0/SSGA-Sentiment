@@ -1,0 +1,6 @@
+google-cloud-storage
+google-cloud-datastore
+pandas
+requests
+matplotlib
+wordcloud
