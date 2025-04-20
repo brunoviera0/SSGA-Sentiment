@@ -9,3 +9,4 @@ transformers
 nltk
 scikit-learn
 google-cloud-firestore
+typesense
