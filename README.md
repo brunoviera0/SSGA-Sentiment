@@ -1,5 +1,7 @@
 # SSGA-Sentiment
 
+ran schema.py once to create typesense
+
 cc_FINAL.py
 
 to run:  export APININJAS_API_KEY="key"
