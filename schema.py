@@ -1,4 +1,17 @@
 ###creates typesense collection for ssga_detail
+import typesense
+
+typesense_client = typesense.Client({
+    'nodes': [{
+        'host': 'localhost',
+        'port': '8108',
+        'protocol': 'http'
+    }],
+    'api_key': 'SSGAtester',  
+    'connection_timeout_seconds': 2
+    })
+
+
 
 schema = {
   "name": "ssga_detail",
