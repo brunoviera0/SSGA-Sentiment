@@ -2,6 +2,7 @@ import os
 import json
 import sys
 import requests
+import typesense
 from typing import List
 import pandas as pd
 from google.cloud import storage
@@ -19,6 +20,15 @@ def get_authenticated(url):
     return requests.get(url, headers=headers)
 
 ###ROOM FOR TYPESENSE IMPLEMENTATION###
+typesense_client = typesense.Client({
+    'nodes': [{
+        'host': 'localhost',  #find url for typesense cloud or keep local
+        'port': '8108',
+        'protocol': 'http'
+    }],
+    'api_key': 'your-typesense-api-key', ### find key or create one
+    'connection_timeout_seconds': 2
+})
 
 #API Ninjas (ticker, year, and quarter)
 def earnings_calls(tickers: List[str], year: int, quarter: int):
