@@ -2,11 +2,13 @@
 
 ran schema.py once to create typesense
 
-To create local typesense server: docker run -p 8108:8108 -v/tmp/typesense-data:/data \
-  typesense/typesense:latest \
-  --data-dir /data \
-  --api-key=SSGAtester \
-  --enable-cors
+To create local typesense server:
+
+sudo docker pull typesense/typesense:0.25.1
+
+sudo docker run -p 8108:8108 -v /tmp/typesense-data:/data \
+typesense/typesense:0.25.1 --data-dir /data --api-key=SSGAtester --enable-cors
+
 
 Local server used for testing, need to switch to paid cloud server.
 
