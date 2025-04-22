@@ -1,3 +1,5 @@
+###creates typesense collection for ssga_detail
+
 schema = {
   "name": "ssga_detail",
   "fields": [
