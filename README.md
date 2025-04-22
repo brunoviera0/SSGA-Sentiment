@@ -2,6 +2,14 @@
 
 ran schema.py once to create typesense
 
+To create local typesense server: docker run -p 8108:8108 -v/tmp/typesense-data:/data \
+  typesense/typesense:latest \
+  --data-dir /data \
+  --api-key=SSGAtester \
+  --enable-cors
+
+Local server used for testing, need to switch to paid cloud server.
+
 cc_FINAL.py
 
 to run:  export APININJAS_API_KEY="key"
