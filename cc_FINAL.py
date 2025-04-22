@@ -110,6 +110,20 @@ def store_to_datastore(ticker, year, quarter, paragraphs):
             })
             datastore_client.put(detail_entity)
 
+            try: ###try to dump table entries to typesense
+                typesense_client.collections["ssga_detail"].documents.create({
+                    "Period": period,
+                    "Category": row["Category"],
+                    "DocumentType": "Conference Call",
+                    "Keyword": row["Keyword"],
+                    "Paragraph": row["Paragraph"],
+                    "Score": row["Sentiment Score"],
+                    "Magnitude_Score": row["Sentiment Magnitude"],
+                    "Ticker": ticker
+                })
+            except Exception as e:
+                print(f"Typesense error for {ticker}: {e}")
+
     #average sentiment for call ssga_sentiment
     count = len(processed_df)
     avg_score = processed_df["Sentiment Score"].mean() if count > 0 else 0.0
