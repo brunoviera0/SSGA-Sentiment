@@ -26,7 +26,7 @@ typesense_client = typesense.Client({
         'port': '8108',
         'protocol': 'http'
     }],
-    'api_key': 'your-typesense-api-key', ### find key or create one
+    'api_key': 'SSGAtester',
     'connection_timeout_seconds': 2
 })
 
