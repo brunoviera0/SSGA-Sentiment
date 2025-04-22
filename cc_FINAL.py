@@ -18,6 +18,8 @@ def get_authenticated(url):
     headers = {'X-Api-Key': os.getenv('APININJAS_API_KEY')}
     return requests.get(url, headers=headers)
 
+###ROOM FOR TYPESENSE IMPLEMENTATION###
+
 #API Ninjas (ticker, year, and quarter)
 def earnings_calls(tickers: List[str], year: int, quarter: int):
     transcripts = {}
