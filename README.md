@@ -64,6 +64,6 @@ Runs dailypricesjob.py every weekday at 4 PM Eastern Time.
 
 Output and errors are logged to cron_log.txt inside the same folder.
 
-To edit or view the current crontab:
+To edit or view the current crontab-
 
 crontab -e
