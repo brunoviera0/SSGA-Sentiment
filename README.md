@@ -12,6 +12,11 @@ example of how to index using typesense can be found "typesense_test.py"
 
 Local server used for testing, need to switch to paid cloud server.
 
+
+cc_wordcloud.py: generates a wordcloud based off of a stored earnings call transcript, then stores the file in a bucket within google storage
+
+
+
 cc_FINAL.py
 
 to run:  export APININJAS_API_KEY="key"
