@@ -40,3 +40,30 @@ Datastore tables:
 -ssga_keywords (ssga keywords with category and sector)
 
 cc_wordcloud.py generates a word cloud based on the transcripts stored in ssga_transcripts, saves them as a .png file, and stores them in a bucket.
+
+
+dailypricesjob.py
+
+to run: python3 dailypricesjob.py
+
+Pulls today's stock price and volume data for the tickers found in the CompanyInfo table
+
+Creates an entity for each ticker in the Dailyprices Datastore table with: ticker, price, volume, timestamp
+
+If no data is found for a ticker, the script will print a message and continue.
+
+To set up automatic daily price updates using cron:
+
+The script is scheduled to run Monday through Friday at 4:00 PM Eastern Time.
+
+Crontab entry:
+
+00 20 * * 1-5 /usr/bin/python3 /home/sentapp/dailyprices/dailypricesjob.py >> /home/sentapp/dailyprices/cron_log.txt 2>&1
+
+Runs dailypricesjob.py every weekday at 4 PM Eastern Time.
+
+Output and errors are logged to cron_log.txt inside the same folder.
+
+To edit or view the current crontab:
+
+crontab -e
